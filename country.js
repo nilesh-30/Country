@@ -38,7 +38,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
             .then(([borderCountry]) => {
                 const borderCountryTag = document.createElement('a')
                 borderCountryTag.innerText = borderCountry.name.common
-                borderCountryTag.href = `Country/country.html?name=${borderCountry.name.common}`
+                borderCountryTag.href = `./country.html?name=${borderCountry.name.common}`
                 bordersCountries.append(borderCountryTag)
             })
         })
