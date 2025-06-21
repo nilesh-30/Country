@@ -36,10 +36,9 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
             fetch(`https://restcountries.com/v3.1/alpha/${code}`)
             .then((res) => res.json())
             .then(([borderCountry]) => {
-                console.log(borderCountry)
                 const borderCountryTag = document.createElement('a')
                 borderCountryTag.innerText = borderCountry.name.common
-                borderCountryTag.href = `country.html?name=${borderCountry.name.common}`
+                borderCountryTag.href = `Country/country.html?name=${borderCountry.name.common}`
                 bordersCountries.append(borderCountryTag)
             })
         })
