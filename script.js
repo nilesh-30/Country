@@ -30,11 +30,17 @@ fetchAllCountries()
 
 // Filter Countries
 filterByRegion.addEventListener('change', (e) => {
-    fetch(`https://restcountries.com/v3.1/region/${e.target.value}`)
-        .then((res) => res.json())
-        .then((data) => {
-            renderCountries(data)
-        })
+    const region = e.target.value;
+
+    if (region === "All") {
+        fetchAllCountries();
+    } else {
+        fetch(`https://restcountries.com/v3.1/region/${e.target.value}`)
+            .then((res) => res.json())
+            .then((data) => {
+                renderCountries(data)
+            })
+    }
 })
 
 // Render Countries Card Function
